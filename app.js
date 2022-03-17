@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 5000;
+
 const mongoose = require('mongoose');
+
 // mongoose.connect('mongodb://localhost:27017/ApiTest')
 mongoose.connect("mongodb+srv://CodePriyanshu786:pathak123@mucluster.utw9l.mongodb.net/myDatabase?retryWrites=true&w=majority")
 const path = require('path');
@@ -18,6 +21,6 @@ app.use('/api/admin', adminRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/product', productRouter);
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('server start');
 })
